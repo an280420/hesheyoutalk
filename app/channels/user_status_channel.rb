@@ -9,7 +9,6 @@ class UserStatusChannel < ApplicationCable::Channel
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
     current_user.update(status: false)
-    stream_from "user_status_channel"
     render_users
   end
 
