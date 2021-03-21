@@ -17,10 +17,8 @@
           Welcome to Instatalk, <b><%= current_user.nickname %></b>!
         </div>
       </div>
-      <div class="card text-center mt-4 mb-4">
-        <div id="online-users">
-          <%= render partial: "users/user", collection: User.online.as_json, as: :user %>
-        </div>
+      <div class="card text-center mt-4 mb-4 card-body">
+          Сейчас на сайте: <b id="online-users"><%= render partial: "users/user", collection: User.online.as_json, as: :user %></b>
       </div>
 
       <%= yield %>
